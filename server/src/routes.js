@@ -27,9 +27,15 @@ module.exports = (stackDB) => {
 
   
 
-   router.post('/', async (req, res) => {
+   router.post('/addQuestion', async (req, res) => {
     // TODO: Implement!
-    res.json({msg: "Not implemented :("});
+    const question = await stackDB.createQuestion(
+      req.body.questionTitle,
+      req.body.questionDescription,
+      req.body.questionDate,
+      req.body.questionPoster
+    ); 
+    res.json(question);
  });
 
   return router;
