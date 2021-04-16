@@ -19,10 +19,17 @@ function App() {
       <h1>StackOverflow Copy</h1>
       <h3>by Ruth</h3>
       <p>Data from server:</p> 
-      {data.map(stack => {
-        return <p key={stack._id}>{stack.answer} ({stack._id})</p>;
-        // return <p key={questions._id}>{questions.answer} ({question._id}) test</p>;
-      })} 
+
+      {data.map((stack) => {
+ return (
+ <p key={stack._id}>
+ {stack.questionTitle} <br />
+ {stack.questionDescription} <br />
+ {stack.questionDate}<br />
+ {stack.questionPoster} 
+ </p>
+ );
+ })}
     </>
   );
 }

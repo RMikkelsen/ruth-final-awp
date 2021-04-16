@@ -14,8 +14,8 @@ module.exports = (mongoose) => {
        
         }]
     });
-    const questionModel = mongoose.model('question', stackSchema);
-    // const answerModel = mongoose.model('answer', stackSchema);
+    const questionModel = mongoose.model('stack', stackSchema);
+   
   
     
 
@@ -29,17 +29,17 @@ module.exports = (mongoose) => {
       }
 
 
-      async function getQuestion() {
+      async function getQuestion(id) {
         try {
-          return await questionModel.find();
+          return await questionModel.findById(id);
         } catch (error) {
           console.error("getQuestion", error.message);
           return {};
         }
       }
 
- async function createQuestion(text) {
-    let question = new questionModel({questionTitle: text});
+ async function createQuestion(questionTitle, questionDescription, questionDate, questionPoster) {
+    let question = new questionModel({questionTitle: questionTitle,  questionDescription: questionDescription, questionDate: questionDate, questionPoster: questionPoster });
     return question.save();
    }
 
@@ -51,7 +51,12 @@ module.exports = (mongoose) => {
     if (l === 0) {
       let promises = [];
       for (let i = 0; i < count; i++) {
-        let newQuestion = new questionModel({name: `Question number ${i}`});
+        let newQuestion = new questionModel({
+          questionTitle: `Title ${i}`,
+          questionDescription: `Description ${i}`,
+          questionDate: `Date ${i}`,
+          questionPoster: `Author ${i}`
+      });
         promises.push(newQuestion.save());
       }
       return Promise.all(promises);
