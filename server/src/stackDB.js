@@ -39,7 +39,7 @@ module.exports = (mongoose) => {
       }
 
  async function createQuestion(text) {
-    let question = new questionModel({qTitle: text});
+    let question = new questionModel({questionTitle: text});
     return question.save();
    }
 
@@ -60,6 +60,7 @@ module.exports = (mongoose) => {
 
 
   return {
+   
     getQuestions,
     getQuestion,
     createQuestion,
