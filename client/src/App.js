@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import { Router, Link } from "@reach/router";
+import { Router} from "@reach/router";
 import Question from './question';
 import Questions from './questions';
-import createQuestion from './createquestion';
+
 
 
 const API_URL = process.env.REACT_APP_API;

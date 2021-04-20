@@ -9,7 +9,7 @@ function Questions(props) {
 
   return ( 
   <>
-    <h3> Questions </h3> 
+    <h3> Question </h3> 
     <ol> 
       {data.map((question) => (
     <>

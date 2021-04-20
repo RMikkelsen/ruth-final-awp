@@ -4,7 +4,7 @@ import React from 'react';
 const API_URL = process.env.REACT_APP_API;
 
 function CreateQuestion(props) {
-  const {createQuestion} = props;
+
 
   const [questionTitle, setTitle] = useState("");
   const [questionDescription, setDesc] = useState("");
@@ -24,7 +24,7 @@ function CreateQuestion(props) {
           body: JSON.stringify(questionTitle, questionDescription, questionPoster, questionDate),
         });
         console.log(response);
-        const data= await response.json();
+        const data = await response.json();
        
       }
 
@@ -37,13 +37,11 @@ function CreateQuestion(props) {
       <input onChange={(event) => setDesc(event.target.value)} type="text" />
       <p>Date</p>
       <input onChange={(event) => setDate(event.target.value)} type= "date" />
-      <p>Suthor</p>
+      <p>Author</p>
       <input onChange={(event) => setPoster(event.target.value)} type="text" />
 <br></br>
-      <button onClick={(postData) => {
-        createQuestion(questionTitle, questionDescription, questionDate, questionPoster);
-      }}>Add Question
-
+      <button onClick={postData}>
+      Add Question 
       </button>
     </>
   );
