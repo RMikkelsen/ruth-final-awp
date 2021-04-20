@@ -8,7 +8,7 @@ import Questions from './questions';
 const API_URL = process.env.REACT_APP_API;
 
 function App() {
-  const [data, setQuestions] = useState([]);
+  const [data, setData] = useState([]);
   
   function getQuestion(id){
     return data.find(question => question._id === (id));
@@ -19,7 +19,7 @@ function App() {
       const url = `${API_URL}/questions`;
       const response = await fetch(url);
       const data = await response.json();
-      setQuestions(data);
+      setData(data);
     }
     getData();
   }, []); 

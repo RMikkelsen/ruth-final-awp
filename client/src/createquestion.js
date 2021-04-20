@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import React from 'react';
 const API_URL = process.env.REACT_APP_API;
@@ -16,11 +15,11 @@ function CreateQuestion(props) {
 
   async function postData(){
     const url = `${API_URL}/questions`;
-        const response = await fetch(url, {
+  
+        const response = await fetch(url, 
+          {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(questionTitle, questionDescription, questionPoster, questionDate),
         });
         console.log(response);
@@ -40,9 +39,7 @@ function CreateQuestion(props) {
       <p>Author</p>
       <input onChange={(event) => setPoster(event.target.value)} type="text" />
 <br></br>
-      <button onClick={postData}>
-      Add Question 
-      </button>
+      <button onClick={postData}>Add Question </button>
     </>
   );
 }

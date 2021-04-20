@@ -17,7 +17,7 @@ async function putData(){
     const answer = {answerDescription, answerDate, answerPoster, vote};
     let questionAnswer = question;
     questionAnswer.answers = [answer]
-    const url = `${API_URL}/questions`;
+    const url = `${API_URL}/questions/answers`;
         const response = await fetch(url, {
           method: 'PUT',
           headers: {

@@ -27,7 +27,7 @@ module.exports = (stackDB) => {
 
   
 
-   router.post('/addQuestion', async (req, res) => {
+   router.post('/', async (req, res) => {
     // TODO: Implement!
     const question = await stackDB.createQuestion(
       req.body.questionTitle,
@@ -43,7 +43,7 @@ const question = await stackDB.updateQuestion(
   req.body._id,
   req.body.answers
 );
-
+res.json(question);
  })
 
 
