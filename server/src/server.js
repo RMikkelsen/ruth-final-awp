@@ -17,8 +17,7 @@ async function createServer() {
   await mongoose.connect(MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
   // Create data
-  //const kittenDB = require('./kittenDB')(mongoose);
-  //await kittenDB.bootstrap();
+
 
   const stackDB = require('./stackDB')(mongoose);
  await stackDB.bootstrap();

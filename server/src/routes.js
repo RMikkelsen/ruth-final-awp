@@ -38,5 +38,14 @@ module.exports = (stackDB) => {
     res.json(question);
  });
 
+ router.put('/answers', async (req, res) => {
+const question = await stackDB.updateQuestion(
+  req.body._id,
+  req.body.answers
+);
+
+ })
+
+
   return router;
 }
