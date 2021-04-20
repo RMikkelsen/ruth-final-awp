@@ -20,7 +20,7 @@ function Question(props) {
     
     <h3>Answers:</h3>
     <ol>
-      {question.answers.map((answer)=> (
+      {question.answer.map((answer)=> (
         <li key={question.id}>{answer.answerDescription}</li>
       ))}
     </ol>
