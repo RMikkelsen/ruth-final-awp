@@ -4,28 +4,13 @@ import './style.css';
 const API_URL = process.env.REACT_APP_API;
 
 function CreateQuestion(props) {
-
+  const { createQuestion } = props;
 
   const [questionTitle, setTitle] = useState("");
   const [questionDescription, setDesc] = useState("");
   const [questionDate, setDate] = useState("");
   const [questionPoster, setPoster] = useState("");
 
-
-
-  async function postData(){
-    const url = `${API_URL}/questions`;
-  
-        const response = await fetch(url, 
-          {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({questionTitle, questionDescription, questionPoster, questionDate}),
-        });
-        console.log(response);
-        const data = await response.json();
-       
-      }
 
   return (
     <>
@@ -39,7 +24,8 @@ function CreateQuestion(props) {
       <p>Author</p>
       <input onChange={(event) => setPoster(event.target.value)} type="text" />
 <br></br>
-      <button onClick={postData}>Add Question </button>
+      <button type="button" onClick={(event) => { 
+        createQuestion(questionTitle, questionDescription, questionDate, questionPoster);}}> Add Question </button>
     </>
   );
 }

@@ -52,6 +52,7 @@ body {
     padding: 80px;
     border-radius: 30px;
     max-height: 500px;
+    width: 300px;
 }
 button {
     margin: 10px;

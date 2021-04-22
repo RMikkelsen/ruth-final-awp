@@ -5,16 +5,12 @@ import Questions from './questions';
 
 
 
-
 const API_URL = process.env.REACT_APP_API;
 
 function App() {
   const [data, setData] = useState([]);
   
-  function getQuestion(id){
-    return data.find(question => question._id === (id));
-  }
-  
+ 
   useEffect(() => {
      async function getData() {
      const url = `${API_URL}/questions`;
@@ -26,8 +22,37 @@ function App() {
     getData();
   }, []); 
 
-
+  function getQuestion(id){
+    return data.find(question => question._id === parseInt(id));
+  }
   
+  function createQuestion(questionTitle, questionDescription, questionDate, questionPoster) {
+  
+    const data = { 
+      title: questionTitle, 
+      description: questionDescription,
+     date: questionDate,
+      poster: questionPoster,
+ 
+    };
+    const postData = async () => {
+      const url = `${API_URL}/questions`;
+    
+          const response = await fetch(url, 
+            {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({questionTitle,questionDescription, questionDate, questionPoster}),
+          });
+         
+          const reply = await response.json();
+          console.log(reply);
+        };
+        
+postData();
+        }
+
+
 return (
 <>
 <div className="header">
@@ -35,12 +60,14 @@ return (
 <h3>By Ruth Moritz Mikkelsen</h3>
 </div>
 <Router>
-<Questions path="/" exact data={data}/>
+<Questions path="/" exact data={Questions} createQuestion={createQuestion}/>
 <Question path="/question/:id" getQuestion ={getQuestion}/>
 </Router>
 </>
+  
 );
 }
+
 export default App;
 
 //   return (
@@ -60,4 +87,3 @@ export default App;
 //  );
 //  })}
 //     </>
-
