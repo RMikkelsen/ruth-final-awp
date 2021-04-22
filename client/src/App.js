@@ -5,6 +5,7 @@ import Questions from './questions';
 
 
 
+
 const API_URL = process.env.REACT_APP_API;
 
 function App() {
@@ -16,20 +17,26 @@ function App() {
   
   useEffect(() => {
      async function getData() {
-      const url = `${API_URL}/questions`;
-      const response = await fetch(url);
+     const url = `${API_URL}/questions`;
+      const response = await fetch(url
+        );
       const data = await response.json();
       setData(data);
     }
     getData();
   }, []); 
 
+
+  
 return (
 <>
-<h1> stack app</h1>
+<div className="header">
+<h1> StackOverflow Clone</h1>
+<h3>By Ruth Moritz Mikkelsen</h3>
+</div>
 <Router>
-<Questions path ="/"exact data ={data}/>
-<Question path ="/question/:id" getQuestion ={getQuestion}/>
+<Questions path="/" exact data={data}/>
+<Question path="/question/:id" getQuestion ={getQuestion}/>
 </Router>
 </>
 );

@@ -9,11 +9,16 @@ function Questions(props) {
 
   return ( 
   <>
-    <h3> Question </h3> 
-    <ol> 
+  
+    <div className="questionlist">
+    
+    <ol className='list'> 
+    <h3> Posted Questions </h3> 
       {data.map((question) => (
-    <>
-        <Link to={`/question/${question._id}`}> {question.questionTitle}</Link> 
+    <div class="questionposts">
+
+        <Link to={`/question/${question._id}`}> 
+        {question.questionTitle}</Link> 
         <p key={question._id}> {question.questionDescription} 
         <br/> {question.questionDate}
         <br/> {question.questionPoster} 
@@ -21,13 +26,15 @@ function Questions(props) {
 
         </p> 
         
-        </>
+        </div>
 
       ))
     } 
     </ol>
-
+<div className="createquestion">
     <CreateQuestion/>
+    </div>
+    </div>
     </>
   );
 }

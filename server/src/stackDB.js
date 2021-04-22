@@ -49,6 +49,7 @@ module.exports = (mongoose) => {
     const question = await questionModel.findByIdAndUpdate(id,{answers});
     console.log(question);
     return question.save();
+    
   }
   async function bootstrap(count = 10) {
     let l = (await getQuestions()).length;

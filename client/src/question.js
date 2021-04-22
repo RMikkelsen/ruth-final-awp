@@ -1,5 +1,6 @@
 import React from 'react';
-import AddAnswer from './answer'
+import AddAnswer from './answer';
+
 
 
 
@@ -9,8 +10,10 @@ function Question(props) {
 
 
       return (
-       <>
-        <h3>Question: {question.questionTitle}</h3> 
+      
+      <div className="question">
+        <h3>Question: </h3> 
+        <p> {question.questionTitle}</p> 
   
          <p>{question.questionDescription}</p>
     
@@ -25,7 +28,7 @@ function Question(props) {
       ))}
     </ol>
     <AddAnswer question={question}/>
-       </>
+       </div>
 
      );
 

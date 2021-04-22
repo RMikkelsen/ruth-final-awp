@@ -12,18 +12,16 @@ function AddAnswer(props) {
   const [vote, setVote] = useState("");
 
 
-
 async function putData(){
     const answer = {answerDescription, answerDate, answerPoster, vote};
     let questionAnswer = question;
     questionAnswer.answers = [answer]
     const url = `${API_URL}/questions/answers`;
-        const response = await fetch(url, {
+        const response = await fetch(url,
+          {
           method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(questionAnswer),
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({questionAnswer}),
         });
         console.log(response);
         const data= await response.json();
@@ -31,15 +29,13 @@ async function putData(){
 
 }
 
-
-  // Conditional rendering
   return (
     <>
       <h3>Add Your Answer</h3>
 
       <p>Description</p>
       <input onChange={(event) => setaDesc(event.target.value)} type="text" />
-      <p>Preparation Time</p>
+      <p>Date</p>
       <input onChange={(event) => setaDate(event.target.value)} type= "date" />
       <p>Submitted by</p>
       <input onChange={(event) => setaPoster(event.target.value)} type="text" />

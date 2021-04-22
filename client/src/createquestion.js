@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
+import './style.css';
 const API_URL = process.env.REACT_APP_API;
 
 function CreateQuestion(props) {
@@ -9,7 +10,6 @@ function CreateQuestion(props) {
   const [questionDescription, setDesc] = useState("");
   const [questionDate, setDate] = useState("");
   const [questionPoster, setPoster] = useState("");
-  // Conditional rendering
 
 
 
@@ -20,7 +20,7 @@ function CreateQuestion(props) {
           {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(questionTitle, questionDescription, questionPoster, questionDate),
+          body: JSON.stringify({questionTitle, questionDescription, questionPoster, questionDate}),
         });
         console.log(response);
         const data = await response.json();
@@ -29,7 +29,7 @@ function CreateQuestion(props) {
 
   return (
     <>
-      <h3>Add Your Question</h3>
+      <h3>Ask A Question</h3>
 <p>Title</p>
       <input onChange={(event) => setTitle(event.target.value)} type="text" />
       <p>Description</p>
