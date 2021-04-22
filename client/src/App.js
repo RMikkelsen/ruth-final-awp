@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import { Router} from "@reach/router";
 import Question from './question';
 import Questions from './questions';
+import AddAnswer from './answer.js';
 
 
 
@@ -50,8 +51,24 @@ function App() {
         };
         
 postData();
-        }
+      }
 
+      
+async function putData(){
+  const answer = {answerDescription, answerDate, answerPoster, vote};
+  let questionAnswer = question;
+  questionAnswer.answers = [answer]
+  const url = `${API_URL}/questions/answers`;
+      const response = await fetch(url,
+        {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({questionAnswer}),
+      });
+      console.log(response);
+      const data= await response.json();
+     
+}  
 
 return (
 <>
