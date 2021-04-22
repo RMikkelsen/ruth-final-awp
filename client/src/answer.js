@@ -25,7 +25,9 @@ function AddAnswer(props) {
       <p>vote</p>
       <input onChange={(event) => setVote(event.target.value)} type="text" />
 <br></br>
-      <button type="button" onClick={putData} >Add Answer</button>
+      {/* <button type="button" onClick={putData} >Add Answer</button> */}
+      <button type="button" onClick={(event) => { 
+        AddAnswer(answerDescription, answerDate, answerPoster, vote);}}> Add Answer </button>
     </>
   );
 }

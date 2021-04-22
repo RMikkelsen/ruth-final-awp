@@ -6,6 +6,7 @@ import AddAnswer from './answer.js';
 
 
 
+
 const API_URL = process.env.REACT_APP_API;
 
 function App() {
@@ -53,22 +54,33 @@ function App() {
 postData();
       }
 
-      
+      function addAnswer(answerDescription, answerDate, answerPoster, vote) {
+  
+        const data = { 
+        
+          desc: answerDescription,
+         adate: answerDate,
+          aposter: answerPoster,
+          avote: vote,
+     
+        };
 async function putData(){
   const answer = {answerDescription, answerDate, answerPoster, vote};
-  let questionAnswer = question;
-  questionAnswer.answers = [answer]
+  // let questionAnswer = question;
+  // questionAnswer.answers = [answer]
   const url = `${API_URL}/questions/answers`;
       const response = await fetch(url,
         {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({questionAnswer}),
+        body: JSON.stringify({answer}),
       });
       console.log(response);
       const data= await response.json();
      
-}  
+}  ;
+putData();
+      }
 
 return (
 <>
@@ -79,6 +91,7 @@ return (
 <Router>
 <Questions path="/" exact data={Questions} createQuestion={createQuestion}/>
 <Question path="/question/:id" getQuestion ={getQuestion}/>
+<AddAnswer path="/question/:id" addAnswer = {addAnswer}/>
 </Router>
 </>
   
