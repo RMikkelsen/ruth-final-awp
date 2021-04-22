@@ -15,7 +15,7 @@ function Questions(props) {
     
     <ol className='list'> 
   <h3> Posted Questions </h3> 
-      {data.map(question => (
+      {[data].map(question => (
     <div className="questionposts">
 
         <Link to={`/question/${question.id}`}> 
@@ -28,7 +28,7 @@ function Questions(props) {
         {question.questionPoster} 
 
         </p> 
-        
+
         </div>
 
       ))
