@@ -3,11 +3,13 @@ import CreateQuestion from "./createquestion";
 import {Link} from "@reach/router";
 
 
+
+
 function Questions(props) {
 
  const {data, createQuestion} = props;
   // const data = Array.from(props.data);
-
+console.log("data", data)
   return ( 
   <>
   
@@ -15,12 +17,13 @@ function Questions(props) {
     
     <ol className='list'> 
   <h3> Posted Questions </h3> 
-      {[data].map(question => (
+      {data.map(question => 
     <div className="questionposts">
 
-        <Link to={`/question/${question.id}`}> 
-        {question.questionTitle}</Link> 
-        <p key={question._id}>
+<p key={question._id}>
+         <Link to={`/question/${question._id}`}> 
+        {question.questionTitle}</Link>  
+       
         {question.questionDescription} 
         <br/>
         {question.questionDate}
@@ -31,7 +34,7 @@ function Questions(props) {
 
         </div>
 
-      ))
+      )
       
     } 
     </ol>

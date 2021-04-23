@@ -7,6 +7,7 @@ import AddAnswer from './answer.js';
 
 
 
+
 const API_URL = process.env.REACT_APP_API;
 
 function App() {
@@ -89,9 +90,9 @@ return (
 <h3>By Ruth Moritz Mikkelsen</h3>
 </div>
 <Router>
-<Questions path="/" exact data={Questions} createQuestion={createQuestion}/>
+<Questions path="/" data={data} createQuestion={createQuestion}/>
 <Question path="/question/:id" getQuestion ={getQuestion}/>
-<AddAnswer path="/question/:id" addAnswer = {addAnswer}/>
+{/* <AddAnswer path="/question/:id" addAnswer = {addAnswer}/> */}
 </Router>
 </>
   
