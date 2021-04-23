@@ -13,24 +13,24 @@ function Question(props) {
     
   
   const {id, getQuestion} = props;
-    // const question = getQuestion(id);
+  //  const question = getQuestion(id);
     const [question, setQuestion] = useState(getQuestion(id));
 
     const updateQuestion = () => {
-      setQuestion(getQuestion(id))
-    }
+     setQuestion(getQuestion(id))
+     }
 
    
-  // // Conditional rendering
+   // Conditional rendering
   if (question === undefined) {
-    return <>  <p>You should see a question here</p>
+   return <>  <p>You should see a question here</p>
     <div>
-      <img src="/images/tech.jpg" alt="Technical Difficulties"/>
+     <img src="/images/tech.jpg" alt="Technical Difficulties"/>
     </div>
    
 
   <br/><Link to ='/'> Back to Questions </Link> </>;
-    } else {
+     } else {
 
 
 
@@ -42,17 +42,13 @@ function Question(props) {
         <h3>Question: </h3> 
 
 
-     
-
 <ol>
   
 <p> {question.questionTitle}</p> 
 
 </ol>
  
-       
-        
-  
+
           {/* <p>{getQuestion.questionDescription}</p>
     
          <p>Date Posted: {getQuestion.questionDate} </p>
@@ -74,7 +70,7 @@ function Question(props) {
      );
 
       }
+}
     
-    }
  
   export default Question;
