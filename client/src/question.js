@@ -1,15 +1,18 @@
 import React from 'react';
 import AddAnswer from './answer';
-import Questions from './questions';
 import {useState} from 'react';
 import AddVotes from './votes';
+import CreateQuestion from './createquestion';
+import {Link} from "@reach/router";
 
 
 
-
+const API_URL = process.env.REACT_APP_API;
 
 function Question(props) {
-    const {id, getQuestion } = props;
+    
+  
+  const {id, getQuestion} = props;
     // const question = getQuestion(id);
     const [question, setQuestion] = useState(getQuestion(id));
 
@@ -19,9 +22,15 @@ function Question(props) {
 
    
   // // Conditional rendering
-  // if (question === undefined) {
-  //   return <p>You should see a question here</p>;
-  //   } else {
+  if (question === undefined) {
+    return <>  <p>You should see a question here</p>
+    <div>
+      <img src="/images/tech.jpg" alt="Technical Difficulties"/>
+    </div>
+   
+
+  <br/><Link to ='/'> Back to Questions </Link> </>;
+    } else {
 
 
 
@@ -29,15 +38,20 @@ function Question(props) {
       
       <div className="question">
            
+           
         <h3>Question: </h3> 
 
 
+     
 
+<ol>
+  
+<p> {question.questionTitle}</p> 
 
-
-        
+</ol>
+ 
        
-        <p> {question.questionTitle}</p> 
+        
   
           {/* <p>{getQuestion.questionDescription}</p>
     
@@ -53,12 +67,14 @@ function Question(props) {
       ))}  
     </ol> */}
     <AddAnswer question={question} updateQuestion ={updateQuestion}/>
+
+    <br/><Link to ='/'> Back to Questions </Link> 
        </div>
 
      );
 
       }
     
- 
+    }
  
   export default Question;

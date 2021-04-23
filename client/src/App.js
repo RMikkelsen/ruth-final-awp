@@ -3,9 +3,7 @@ import { Router} from "@reach/router";
 import Question from './question';
 import Questions from './questions';
 import AddAnswer from './answer.js';
-
-
-
+import CreateQuestion from './createquestion.js';
 
 
 const API_URL = process.env.REACT_APP_API;
@@ -26,7 +24,7 @@ function App() {
   }, []); 
 
   function getQuestion(id){
-    return data.find(question => question._id === parseInt(id));
+    return data.find(question => question.id === parseInt(id));
   }
   
   function createQuestion(questionTitle, questionDescription, questionDate, questionPoster) {
@@ -45,19 +43,19 @@ function App() {
             {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({questionTitle,questionDescription, questionDate, questionPoster}),
+            body: JSON.stringify({data}),
           });
          
           const reply = await response.json();
           console.log(reply);
-        };
-        
+    };
+     
 postData();
       }
 
       function addAnswer(answerDescription, answerDate, answerPoster, vote) {
   
-        const data = { 
+        const answerData = { 
         
           desc: answerDescription,
          adate: answerDate,

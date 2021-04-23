@@ -20,8 +20,8 @@ console.log("data", data)
       {data.map(question => 
     <div className="questionposts">
 
-<p key={question._id}>
-         <Link to={`/question/${question._id}`}> 
+<p key={question.id}>
+         <Link to={`/question/${question.id}`}> 
         {question.questionTitle}</Link>  
        
         {question.questionDescription} 
