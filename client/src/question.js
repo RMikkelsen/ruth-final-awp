@@ -12,48 +12,45 @@ const API_URL = process.env.REACT_APP_API;
 function Question(props) {
     
   
-  const {id, getQuestion} = props;
-  //  const question = getQuestion(id);
-    const [question, setQuestion] = useState(getQuestion(id));
+  const {_id, getQuestion} = props;
+ const question = getQuestion(_id);
 
-    const updateQuestion = () => {
-     setQuestion(getQuestion(id))
-     }
+const {setQuestion} = useState;
+
+ const updateQuestion = () => {setQuestion(getQuestion(_id))}
 
    
    // Conditional rendering
   if (question === undefined) {
    return <>  <p>You should see a question here</p>
-    <div>
+     <div>
      <img src="/images/tech.jpg" alt="Technical Difficulties"/>
-    </div>
+     </div>
    
 
-  <br/><Link to ='/'> Back to Questions </Link> </>;
-     } else {
-
-
+  // <br/><Link to ='/'> Back to Questions </Link> </>;
+      } else {
 
       return (
       
       <div className="question">
            
-           
+           <>
+        
         <h3>Question: </h3> 
 
-
 <ol>
-  
-<p> {question.questionTitle}</p> 
+<p>
+ {question.questionTitle}</p> 
 
 </ol>
- 
+       </>
 
-          {/* <p>{getQuestion.questionDescription}</p>
+        <p>{question.questionDescription}</p>
     
-         <p>Date Posted: {getQuestion.questionDate} </p>
+         <p>Date Posted: {question.questionDate} </p>
     
-         <p>Author: {getQuestion.questionPoster} </p> */}
+         <p>Author: {question.questionPoster} </p> 
     
     <h3>Answers:</h3>
     {/* <ol>
@@ -62,14 +59,14 @@ function Question(props) {
         <li key= {question._id}> {answer.answerDescription} <br/> <AddVotes answers ={answer} question ={question} />: {answer.vote}</li>
       ))}  
     </ol> */}
-    <AddAnswer question={question} updateQuestion ={updateQuestion}/>
-
+     <AddAnswer question={question} updateQuestion ={updateQuestion}/> 
+ {/* <AddAnswer question={question} />   */}
     <br/><Link to ='/'> Back to Questions </Link> 
        </div>
 
      );
 
-      }
+  }
 }
     
  

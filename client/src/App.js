@@ -23,8 +23,8 @@ function App() {
     getData();
   }, []); 
 
-  function getQuestion(id){
-    return data.find(question => question.id === parseInt(id));
+  function getQuestion(_id){
+    return data.find(question => question._id === _id);
   }
   
   function createQuestion(questionTitle, questionDescription, questionDate, questionPoster) {
@@ -89,7 +89,7 @@ return (
 </div>
 <Router>
 <Questions path="/" data={data} createQuestion={createQuestion}/>
-<Question path="/question/:id" getQuestion ={getQuestion}/>
+<Question path="/question/:_id" getQuestion ={getQuestion}/>
 {/* <AddAnswer path="/question/:id" addAnswer = {addAnswer}/> */}
 </Router>
 </>

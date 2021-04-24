@@ -40,7 +40,7 @@ module.exports = (stackDB) => {
 
  router.put('/answers', async (req, res) => {
 const question = await stackDB.updateQuestion(
-  req.body._id,
+  req.body.id,
   req.body.answers
 );
 res.json(question);
