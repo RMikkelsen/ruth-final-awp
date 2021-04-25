@@ -13,4 +13,5 @@ Issues:
 
             Well before turning in the project, I went to add a question just checking all the working 
             functionality, and now thats messed up too, and showing up blank,
-            even though it worked yesterday :( I'm so frustrated and not sure when/where it broke. 
+            even though it worked yesterday :( I'm so frustrated and not sure when/where it broke. I swear the db was
+            working perfectly and now getting empty arrays. 
