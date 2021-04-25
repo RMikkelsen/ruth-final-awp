@@ -1,18 +1,20 @@
 import React from 'react';
-import AddAnswer from './answer';
+
 import {useState} from 'react';
 import AddVotes from './votes';
 import CreateQuestion from './createquestion';
 import {Link} from "@reach/router";
+import AddAnswer from './answer';
 
 
 
 const API_URL = process.env.REACT_APP_API;
 
 function Question(props) {
-    
-  
+ 
+ 
   const {_id, getQuestion} = props;
+ 
  const question = getQuestion(_id);
 
 const {setQuestion} = useState;
@@ -52,18 +54,19 @@ const {setQuestion} = useState;
     
          <p>Author: {question.questionPoster} </p> 
     
-    <h3>Answers:</h3>
-    {/* <ol>
+    <h4>Answered by the community:</h4>
+    <ol>
     
       {question.answer.map((answer)=> (
-        <li key= {question._id}> {answer.answerDescription} <br/> <AddVotes answers ={answer} question ={question} />: {answer.vote}</li>
+        <li key={question._id}> {answer.answerDescription} <br/> {answer.answerDate} <br/> {answer.answerPoster}<br/> </li>
       ))}  
-    </ol> */}
+    </ol> 
+
      <AddAnswer question={question} updateQuestion ={updateQuestion}/> 
  {/* <AddAnswer question={question} />   */}
     <br/><br/><Link to ='/'> Back to Questions </Link> 
        </div>
-
+      //  <AddVotes answers ={answer} question ={question} />: {answer.vote}
      );
 
   }

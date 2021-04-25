@@ -26,9 +26,9 @@ module.exports = (mongoose) => {
   }
 
 
-  async function getQuestion(id) {
+  async function getQuestion(_id) {
     try {
-      return await questionModel.findById(id);
+      return await questionModel.findById(_id);
     } catch (error) {
       console.error("getQuestion", error.message);
       return {};
@@ -45,8 +45,8 @@ module.exports = (mongoose) => {
     return question.save();
   }
 
-  async function updateQuestion(id, answers){
-    const question = await questionModel.findByIdAndUpdate(id,{answers});
+  async function updateQuestion(_id, answers){
+    const question = await questionModel.findByIdAndUpdate(_id,{answers});
     console.log(question);
     return question.save();
     

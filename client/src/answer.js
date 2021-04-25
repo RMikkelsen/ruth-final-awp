@@ -2,20 +2,21 @@ import { useState } from 'react';
 import React from 'react';
 import Question from './question';
 import Questions from './questions';
+import {Link} from "@reach/router";
 
 const API_URL = process.env.REACT_APP_API;
 
 function AddAnswer(props) {
   const {addAnswer} = props;
-  const {updateQuestion} = props;
-  const{question} = props;
  
+ 
+
   
   const [answerDescription, setaDesc] = useState("");
   const [answerDate, setaDate] = useState("");
   const [answerPoster, setaPoster] = useState("");
 
-
+  
 
   return (
     <>
@@ -32,9 +33,13 @@ function AddAnswer(props) {
 <br></br>
      {/* <button type="button" onClick={addAnswer} >Add Answer</button>   */}
   
-     <button type="button" onClick={(event) => { 
-        addAnswer(answerDescription, answerDate, answerPoster);
-        }}> Add Answer </button>  
+     <button type="button" onClick={(event) => {
+       addAnswer(answerDescription, answerDate, answerPoster);
+     
+      //  setaDesc();
+      //  setaDate();
+      //  setaPoster();
+     }}> Add Answer </button>  
   
     </>
     

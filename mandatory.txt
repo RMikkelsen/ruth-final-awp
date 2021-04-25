@@ -10,3 +10,7 @@ Issues:
         similar to errors I had before but running out of time to fix before the deadline
         3) voting not working - I started adding in the functionality, but due to issue #2, I need answers posted first before I 
         can fix the voting issue :( 
+
+            Well before turning in the project, I went to add a question just checking all the working 
+            functionality, and now thats messed up too, and showing up blank,
+            even though it worked yesterday :( I'm so frustrated and not sure when/where it broke. 
