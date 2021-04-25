@@ -1,9 +1,9 @@
 import React from 'react';
 
 function AddVotes(props){
-    const {answer, question}= props;
+    const{answer, question}= props;
 
-    async function putData(){
+    async function postData(){
         const answers = question.answer.map((a) => {
 
             if (a._id === answer._id) {
@@ -16,10 +16,11 @@ function AddVotes(props){
     }
 return (
     <>
-    <button onClick = {putData}>Vote </button>
+    <button onClick = {postData}>Vote </button>
     </>
 
 )
 
 }
 export default AddVotes;
+

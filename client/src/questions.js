@@ -23,9 +23,10 @@ console.log("data", data)
 <p key={question._id}>
          <Link to={`/question/${question._id}`}> 
         {question.questionTitle}</Link>  
-       
+       <br/><br/>
+
         {question.questionDescription} 
-        <br/>
+        <br/> <br/>
         {question.questionDate}
         <br/> 
         {question.questionPoster} 

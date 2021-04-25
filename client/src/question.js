@@ -61,7 +61,7 @@ const {setQuestion} = useState;
     </ol> */}
      <AddAnswer question={question} updateQuestion ={updateQuestion}/> 
  {/* <AddAnswer question={question} />   */}
-    <br/><Link to ='/'> Back to Questions </Link> 
+    <br/><br/><Link to ='/'> Back to Questions </Link> 
        </div>
 
      );
