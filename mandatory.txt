@@ -4,8 +4,8 @@ github: https://github.com/RMikkelsen/stack-clone
 Heroku: https://mern-awp.herokuapp.com/
 
 Issues: 
-    There's a few here but I have 3 kids at home and getting pretty frustrated with them... 
-        1) date is a little weird
+    I had some issues but also have 3 kids at home and getting pretty frustrated with them at the moment... 
+        1) date is a little weird - not done totally correctly but there IS a date option... 
         2) not getting answers to show up, keep getting the error "TypeError addAnswer is not a function" which is
         similar to errors I had before but running out of time to fix before the deadline
         3) voting not working - I started adding in the functionality, but due to issue #2, I need answers posted first before I 
@@ -14,4 +14,5 @@ Issues:
             Well before turning in the project, I went to add a question just checking all the working 
             functionality, and now thats messed up too, and showing up blank,
             even though it worked yesterday :( I'm so frustrated and not sure when/where it broke. I swear the db was
-            working perfectly and now getting empty arrays. 
+            working perfectly and now getting empty arrays. I tried to roll back the git commits on another branch but it still wouldn't work.
+            All I had left was fixing answers and votes and I'm so dissapointed :( 
