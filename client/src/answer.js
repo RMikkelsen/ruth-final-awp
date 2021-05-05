@@ -9,14 +9,11 @@ const API_URL = process.env.REACT_APP_API;
 function AddAnswer(props) {
   const {addAnswer} = props;
  
- 
-
   
   const [answerDescription, setaDesc] = useState("");
   const [answerDate, setaDate] = useState("");
   const [answerPoster, setaPoster] = useState("");
 
-  
 
   return (
     <>

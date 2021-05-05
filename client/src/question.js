@@ -13,7 +13,7 @@ const API_URL = process.env.REACT_APP_API;
 function Question(props) {
  
  
-  const {_id, getQuestion} = props;
+  const {_id, getQuestion, addAnswer} = props;
  
  const question = getQuestion(_id);
 
@@ -62,7 +62,7 @@ const {setQuestion} = useState;
       ))}  
     </ol> 
 
-     <AddAnswer question={question} updateQuestion ={updateQuestion}/> 
+     <AddAnswer question={question} addAnswer ={addAnswer}/> 
  {/* <AddAnswer question={question} />   */}
     <br/><br/><Link to ='/'> Back to Questions </Link> 
        </div>

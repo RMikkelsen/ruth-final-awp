@@ -30,18 +30,19 @@ module.exports = (stackDB) => {
    router.post('/', async (req, res) => {
     // TODO: Implement!
     const question = await stackDB.createQuestion(
-      req.body.questionTitle,
-      req.body.questionDescription,
-      req.body.questionDate,
-      req.body.questionPoster
+      req.body.title,
+      req.body.description,
+      req.body.date,
+      req.body.poster
     ); 
     res.json(question);
  });
 
- router.put('/answers', async (req, res) => {
+ router.put('/answer', async (req, res) => {
 const question = await stackDB.updateQuestion(
-  req.body.id,
-  req.body.answers
+  req.body.adesc,
+  req.body.adate,
+  req.body.aposter
 );
 res.json(question);
  })

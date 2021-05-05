@@ -36,6 +36,8 @@ function App() {
       poster: questionPoster,
  
     };
+    console.log("data", data);
+
     const postData = async () => {
      const url = `${API_URL}/questions`;
     
@@ -43,7 +45,7 @@ function App() {
             {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({data}),
+            body: JSON.stringify(data),
           });
          
           const reply = await response.json();
@@ -57,7 +59,7 @@ postData();
 function addAnswer(answerDescription, answerDate, answerPoster) {
   
   const data = { 
-    desc: answerDescription,
+    adesc: answerDescription,
    adate: answerDate,
     aposter: answerPoster,
 
@@ -65,13 +67,13 @@ function addAnswer(answerDescription, answerDate, answerPoster) {
 
 
   const postData = async () => {
-   const url = `${API_URL}/questions/answer`;
+   const url = `${API_URL}/question/answer`;
   
         const response = await fetch(url, 
           {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({data}),
+          body: JSON.stringify(data),
         });
        
         const reply = await response.json();
