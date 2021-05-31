@@ -1,18 +1,18 @@
 import React from 'react';
 
 function AddVotes(props){
-    const{answer, question}= props;
+    const{comment, post}= props;
 
     async function postData(){
-        const answers = question.answer.map((a) => {
+        const comments = post.comment.map((a) => {
 
-            if (a._id === answer._id) {
+            if (a._id === comment._id) {
                 a.vote = a.vote +1;
             }
             return a;
         })
 
-        question.answers = answers;
+        post.comments = comments;
     }
 return (
     <>

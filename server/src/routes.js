@@ -1,4 +1,4 @@
-module.exports = (stackDB) => {
+module.exports = (postDB) => {
   const express = require("express");
   const router = express.Router();
 
@@ -16,35 +16,35 @@ module.exports = (stackDB) => {
 
 
   router.get('/', async (req, res) => {
-    const questions = await stackDB.getQuestions(); 
-    res.json(questions);
+    const posts = await postDB.getPosts(); 
+    res.json(posts);
   });
 
   router.get('/:id', async (req, res) => {
-    const question = await stackDB.getQuestion(req.params.id);
-    res.json(question);
+    const post = await postDB.getPost(req.params.id);
+    res.json(post);
   });
 
   
 
    router.post('/', async (req, res) => {
     // TODO: Implement!
-    const question = await stackDB.createQuestion(
+    const post = await postDB.addPost(
       req.body.title,
-      req.body.description,
+      req.body.topic,
       req.body.date,
-      req.body.poster
+      req.body.author
     ); 
-    res.json(question);
+    res.json(post);
  });
 
- router.put('/answer', async (req, res) => {
-const question = await stackDB.updateQuestion(
-  req.body.adesc,
-  req.body.adate,
-  req.body.aposter
+ router.put('/comment', async (req, res) => {
+const post = await postDB.updatePost(
+  req.body.text,
+  req.body.date,
+  req.body.author
 );
-res.json(question);
+res.json(post);
  })
 
 

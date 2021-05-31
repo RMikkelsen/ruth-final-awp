@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import { Router} from "@reach/router";
-import Question from './question';
-import Questions from './questions';
-import AddAnswer from './answer.js';
-import CreateQuestion from './createquestion.js';
+import Post from './Post';
+import Posts from './Posts';
+import AddComment from './AddComment';
+import AddPost from './AddPost.js';
 
 
 const API_URL = process.env.REACT_APP_API;
@@ -14,7 +14,7 @@ function App() {
  
   useEffect(() => {
      async function getData() {
-     const url = `${API_URL}/questions`;
+     const url = `${API_URL}/posts`;
       const response = await fetch(url
         );
       const data = await response.json();
@@ -23,23 +23,23 @@ function App() {
     getData();
   }, []); 
 
-  function getQuestion(_id){
-    return data.find(question => question._id === _id);
+  function getPost(_id){
+    return data.find(post => post._id === _id);
   }
   
-  function createQuestion(questionTitle, questionDescription, questionDate, questionPoster) {
+  function addPost(postTitle, postTopic, postAuth, postDate) {
   
     const data = { 
-      title: questionTitle, 
-      description: questionDescription,
-     date: questionDate,
-      poster: questionPoster,
+      title: postTitle, 
+     topic: postTopic,
+     author: postAuth,
+      date: postDate,
  
     };
     console.log("data", data);
 
     const postData = async () => {
-     const url = `${API_URL}/questions`;
+     const url = `${API_URL}/posts`;
     
           const response = await fetch(url, 
             {
@@ -56,18 +56,18 @@ postData();
       
 }
  
-function addAnswer(answerDescription, answerDate, answerPoster) {
+function addComment(commentText, commentAuth, commentDate) {
   
   const data = { 
-    adesc: answerDescription,
-   adate: answerDate,
-    aposter: answerPoster,
+    text: commentText,
+   author: commentAuth,
+    date: commentDate,
 
   };
 
 
   const postData = async () => {
-   const url = `${API_URL}/question/answer`;
+   const url = `${API_URL}/post/comment`;
   
         const response = await fetch(url, 
           {
@@ -123,12 +123,12 @@ postData();
 return (
 <>
 <div className="header">
-<h1> StackOverflow Clone - Using MERN </h1>
+<h1> MERN Final Exam </h1>
 <h3>By Ruth Moritz Mikkelsen</h3>
 </div>
 <Router>
-<Questions path="/" data={data} createQuestion={createQuestion}/>
-<Question path="/question/:_id" getQuestion={getQuestion} addAnswer={addAnswer}/>
+<Posts path="/" data={data} addPost={addPost}/>
+<Post path="/post/:_id" getPost={getPost} addComment={addComment}/>
 
 </Router>
 </>
