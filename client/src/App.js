@@ -2,8 +2,7 @@ import {useEffect, useState} from "react";
 import { Router} from "@reach/router";
 import Post from './Post';
 import Posts from './Posts';
-import AddComment from './AddComment';
-import AddPost from './AddPost.js';
+
 
 
 const API_URL = process.env.REACT_APP_API;
@@ -15,12 +14,18 @@ function App() {
   useEffect(() => {
      async function getData() {
      const url = `${API_URL}/posts`;
+    
       const response = await fetch(url
         );
-      const data = await response.json();
+       
+     const data = await response.json();
+     
       setData(data);
-    }
+        
+      };
+     
     getData();
+      
   }, []); 
 
   function getPost(_id){
@@ -47,9 +52,10 @@ function App() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data),
           });
-         
+        
           const reply = await response.json();
-          console.log(reply);
+         console.log(reply);
+         
     };
  
 postData();
@@ -76,9 +82,11 @@ function addComment(commentText, commentAuth, commentDate) {
           body: JSON.stringify(data),
         });
        
-        const reply = await response.json();
-        console.log(reply);
-   
+       
+       const reply = await response.json();
+      
+      console.log(reply);
+        
   };
 
 postData();

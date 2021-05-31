@@ -1,6 +1,6 @@
 Name: Ruth Moritz Mikkelsen, cpr: 130185-3064
 Class: Advanced Web Development Spring 2021 
-github: https://github.com/RMikkelsen/stack-clone
+github: https://github.com/RMikkelsen/ruth-final-awp
 Heroku: https://mern-awp.herokuapp.com/
 
 Issues: 

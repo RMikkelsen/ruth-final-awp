@@ -1,7 +1,9 @@
 body {
-    background-color:lightblue;
+   
     padding-left: 50px;
     padding-right: 50px;
+background-color: lightskyblue;
+
     
 }
 
@@ -31,6 +33,7 @@ body {
 }
 
 .questionposts {
+  
     border-style: solid;
     border-radius: 30px;
     border-color: white;

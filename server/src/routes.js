@@ -2,18 +2,6 @@ module.exports = (postDB) => {
   const express = require("express");
   const router = express.Router();
 
-  /**** Routes 
-  router.get('/', async (req, res) => {
-    const kittens = await kittenDB.getKittens(); 
-    res.json(kittens);
-  });
-
-  router.get('/:id', async (req, res) => {
-    const kitten = await kittenDB.getKitten(req.params.id);
-    res.json(kitten);
-  });
-****/
-
 
   router.get('/', async (req, res) => {
     const posts = await postDB.getPosts(); 
@@ -27,22 +15,24 @@ module.exports = (postDB) => {
 
   
 
-   router.post('/', async (req, res) => {
-    // TODO: Implement!
+   router.post('/addpost', async (req, res) => {
+  
     const post = await postDB.addPost(
-      req.body.title,
-      req.body.topic,
-      req.body.date,
-      req.body.author
+
+      req.body.postTitle,
+      req.body.postTopic,
+      req.body.postDate,
+      req.body.postAuthor,
     ); 
+    console.log(addPost);
     res.json(post);
  });
 
  router.put('/comment', async (req, res) => {
 const post = await postDB.updatePost(
-  req.body.text,
-  req.body.date,
-  req.body.author
+  req.body.commentText,
+  req.body.commentDate,
+  req.body.commentAuth
 );
 res.json(post);
  })

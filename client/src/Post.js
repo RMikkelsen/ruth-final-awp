@@ -31,7 +31,7 @@ const {setPost} = useState;
      </div>
    
 
-  // <br/><Link to ='/'> Back to Posts </Link> </>;
+   <br/><Link to ='/'> Back to Posts </Link> </>;
       } else {
 
       return (
