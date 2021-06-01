@@ -132,7 +132,7 @@ postData();
 return (
 <>
 <div className="header">
-<h1> MERN Final Exam </h1>
+<h1> AWP Final Exam </h1>
 <h3>By Ruth Moritz Mikkelsen</h3>
 </div>
 <Router>
