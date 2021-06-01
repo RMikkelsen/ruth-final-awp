@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import { Router} from "@reach/router";
 import Post from './Post';
 import Posts from './Posts';
+import AddPost from './AddPost';
 
 
 
@@ -137,6 +138,7 @@ return (
 <Router>
 <Posts path="/" data={data} addPost={addPost}/>
 <Post path="/post/:_id" getPost={getPost} addComment={addComment}/>
+<AddPost path="/addpost"  addPost={addPost}/>
 
 </Router>
 </>

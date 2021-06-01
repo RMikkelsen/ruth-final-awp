@@ -9,7 +9,7 @@ import {Link} from "@reach/router";
 function Posts(props) {
 
  const {data, addPost} = props;
-  // const data = Array.from(props.data);
+
 console.log("data", data)
 
 
@@ -43,10 +43,10 @@ console.log("data", data)
       
     } 
     </ol>
-    
-<div className="createquestion">
-    <AddPost addPost = {addPost}/>
+    <div>
+    <Link to ='/addpost'> Create a Post </Link> 
     </div>
+   
     </div>
     </>
   );

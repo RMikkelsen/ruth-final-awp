@@ -69,6 +69,8 @@ const {setPost} = useState;
     <br/><br/><Link to ='/'> Back to Questions </Link> 
        </div>
       //  <AddVotes answers ={answer} question ={question} />: {answer.vote}
+
+      
      );
 
   }
