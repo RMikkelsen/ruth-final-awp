@@ -10,7 +10,7 @@ module.exports = (mongoose) => {
 
       commentText: String,
       commentAuth: String,
-      commentDate: Date,
+      commentDate: {type: Date, default: new Date()},
       vote: Number,
 
     }]
@@ -20,7 +20,7 @@ module.exports = (mongoose) => {
 
   async function getPosts() {
     try {
-      return await postModel.find();
+      return await postModel.find().sort('-postDate');
     } catch (error) {
       console.error("getPosts", error.message);
       return {};

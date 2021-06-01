@@ -15,14 +15,14 @@ module.exports = (postDB) => {
 
   
 
-   router.post('/addpost', async (req, res) => {
+   router.post('/posts', async (req, res) => {
   
     const post = await postDB.addPost(
 
-      req.body.postTitle,
-      req.body.postTopic,
-      req.body.postDate,
-      req.body.postAuthor,
+      req.body.title,
+      req.body.topic,
+      req.body.author,
+      req.body.date,
     ); 
     console.log(addPost);
     res.json(post);
@@ -30,9 +30,9 @@ module.exports = (postDB) => {
 
  router.put('/comment', async (req, res) => {
 const post = await postDB.updatePost(
-  req.body.commentText,
-  req.body.commentDate,
-  req.body.commentAuth
+  req.body.text,
+  req.body.author,
+  req.body.date
 );
 res.json(post);
  })

@@ -45,8 +45,8 @@ function App() {
     console.log("data", data);
 
     const postData = async () => {
-     const url = `${API_URL}/posts`;
-    
+     const url = `${API_URL}/addpost`;
+    if (data == undefined) {
           const response = await fetch(url, 
             {
             method: 'POST',
@@ -56,7 +56,7 @@ function App() {
         
           const reply = await response.json();
          console.log(reply);
-         
+        }
     };
  
 postData();
@@ -136,7 +136,7 @@ return (
 <h3>By Ruth Moritz Mikkelsen</h3>
 </div>
 <Router>
-<Posts path="/" data={data} addPost={addPost}/>
+<Posts path="/" data={data} />
 <Post path="/post/:_id" getPost={getPost} addComment={addComment}/>
 <AddPost path="/addpost"  addPost={addPost}/>
 
