@@ -20,7 +20,7 @@ console.log("data", data)
     
     <ol className='list'> 
   <h3> Posted Questions </h3> 
-      {data.map(post => 
+      {data.slice(0,15).map(post => 
     <div className="questionposts">
 
 <p key={post._id}>
