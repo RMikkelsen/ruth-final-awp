@@ -54,7 +54,7 @@ module.exports = (mongoose) => {
     return post.save();
     
   }
-  async function bootstrap(count = 10) {
+  async function bootstrap(count = 50) {
     let l = (await getPosts()).length;
     console.log("Post collection size:", l);
 
@@ -65,7 +65,7 @@ module.exports = (mongoose) => {
          postTitle: `Title ${i}`,
           postTopic: `Topic ${i}`,
           postAuth: `Author ${i}`,
-          postDate: `Date ${i}`,
+          //postDate: `Date ${i}`,
         
         });
         promises.push(newPost.save());
@@ -81,6 +81,6 @@ module.exports = (mongoose) => {
     getPost,
     addPost,
     updatePost,
-    bootstrap
+    bootstrap,
   }
 }
