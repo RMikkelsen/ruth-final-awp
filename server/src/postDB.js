@@ -3,7 +3,7 @@ module.exports = (mongoose) => {
     postTitle: String,
     postTopic: String,
     postAuth: String,
-    postDate: Date,
+    postDate: {type: Date, default: new Date()},
     
     
     comment: [{
@@ -15,7 +15,7 @@ module.exports = (mongoose) => {
 
     }]
   });
-  const postModel = mongoose.model('stack', postSchema);
+  const postModel = mongoose.model('post', postSchema);
 
 
   async function getPosts() {
@@ -54,7 +54,7 @@ module.exports = (mongoose) => {
     return post.save();
     
   }
-  async function bootstrap(count = 50) {
+  async function bootstrap(count = 10) {
     let l = (await getPosts()).length;
     console.log("Post collection size:", l);
 
@@ -65,7 +65,7 @@ module.exports = (mongoose) => {
          postTitle: `Title ${i}`,
           postTopic: `Topic ${i}`,
           postAuth: `Author ${i}`,
-          postDate: `Date ${i}`
+          postDate: `Date ${i}`,
         
         });
         promises.push(newPost.save());
