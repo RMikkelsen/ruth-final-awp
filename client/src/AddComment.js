@@ -10,7 +10,7 @@ function AddComment(props) {
 
   const [commentText, setText] = useState("");
   const [commentAuth, setAuth] = useState("");
-  const [commentDate, setDate] = useState("");
+ 
   
 
   return (

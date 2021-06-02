@@ -51,7 +51,7 @@ const {setPost} = useState;
     
       {post.comment.map((comment)=> (
         <li key={post._id}> 
-       <p>Comment:  {comment.commentTopic}</p> <br/>
+       <p>Comment:  {comment.commentText}</p> <br/>
        <p>Author: {comment.commentAuth}</p><br/>
        <p>Date:  {comment.commentDate} </p><br/>  </li>
       ))}  
