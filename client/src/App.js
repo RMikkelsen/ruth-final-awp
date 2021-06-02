@@ -35,13 +35,13 @@ function App() {
     return data.find(post => post._id === _id);
   }
   
-  function addPost(postTitle, postTopic, postAuth, postDate) {
+  function addPost(postTitle, postTopic, postAuth) {
   
     const data = { 
       title: postTitle, 
      topic: postTopic,
      author: postAuth,
-      date: postDate,
+    
  
     };
     console.log("data", data);
@@ -65,12 +65,12 @@ postData();
       
 }
  
-function addComment(commentText, commentAuth, commentDate) {
+function addComment(commentText, commentAuth) {
   
   const data = { 
     text: commentText,
    author: commentAuth,
-    date: commentDate,
+
 
   };
 

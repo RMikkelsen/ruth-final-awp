@@ -15,7 +15,7 @@ function AddPost(props) {
   const [postTitle, setTitle] = useState("");
   const [postTopic, setTop] = useState("");
   const [postAuth, setAuth] = useState("");
-  const [postDate, setDate] = useState("");
+ 
  
 
 
@@ -29,15 +29,15 @@ function AddPost(props) {
       <p>Topic</p>
       <input onChange={(event) => setTop(event.target.value)} type="text" />
       <p>Author</p>
-      <input onChange={(event) => setAuth(event.target.value)} type="text" />
-      <p>Date</p>
-      <input onChange={(event) => setDate(event.target.value)} type= "date" />
+      <input onChange={(event) => setAuth(event.target.value)} type="text" /><br/>
+     
 <br></br>
       <button type="button" onClick={(event) => { 
        
-       addPost(postTitle, postTopic, postAuth, postDate);
+       addPost(postTitle, postTopic, postAuth);
       navigate("/");}
-         } > Add Question </button>
+         } > 
+         Add Question </button>
      
     </>
 

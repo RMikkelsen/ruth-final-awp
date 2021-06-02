@@ -22,7 +22,7 @@ module.exports = (postDB) => {
       req.body.title,
       req.body.topic,
       req.body.author,
-      req.body.date,
+    
     ); 
     console.log(post);
     res.json(post);
@@ -32,7 +32,7 @@ module.exports = (postDB) => {
 const post = await postDB.updatePost(
   req.body.text,
   req.body.author,
-  req.body.date
+  
 );
 res.json(post);
  })

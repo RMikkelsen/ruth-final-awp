@@ -31,9 +31,9 @@ console.log("data", data)
         {post.postTopic} 
         <br/> 
         {post.postAuth} <br/>
-        {post.postDate}
+       
         <br/> 
-      
+        {post.postDate}
 
         </p> 
 

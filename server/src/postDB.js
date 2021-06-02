@@ -37,12 +37,12 @@ module.exports = (mongoose) => {
     }
   }
 
-  async function addPost(postTitle, postTopic, postDate, postAuth) {
+  async function addPost(postTitle, postTopic, postAuth) {
     let post = new postModel({
       postTitle: postTitle,
     postTopic: postTopic,
     postAuth: postAuth,
-    postDate: postDate,
+  
     
     });
     return post.save();
@@ -65,7 +65,7 @@ module.exports = (mongoose) => {
          postTitle: `Title ${i}`,
           postTopic: `Topic ${i}`,
           postAuth: `Author ${i}`,
-          //postDate: `Date ${i}`,
+          
         
         });
         promises.push(newPost.save());
