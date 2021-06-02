@@ -1,4 +1,15 @@
-body {
+
+
+body{
+    background-color: rgb(255, 255, 255);
+    font-family:sans-serif;
+}
+.header{
+    background-color: rgb(228, 242, 250);
+    padding: 30px;
+    
+}
+.questionlist {
    
     padding-left: 50px;
     padding-right: 50px;

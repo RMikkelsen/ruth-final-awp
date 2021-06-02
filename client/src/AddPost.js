@@ -17,15 +17,11 @@ function AddPost(props) {
   const [postAuth, setAuth] = useState("");
   const [postDate, setDate] = useState("");
  
- 
 
- 
 
   return (
     
     <>
-   
-
 
       <h3>Create a New Post</h3>
 <p>Title</p>
@@ -43,11 +39,8 @@ function AddPost(props) {
       navigate("/");}
          } > Add Question </button>
      
-     
- 
     </>
 
-    
   );
   
 }

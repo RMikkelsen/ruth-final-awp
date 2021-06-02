@@ -7,8 +7,6 @@ import AddComment from './AddComment'
 import {Link} from "@reach/router";
 
 
-
-
 const API_URL = process.env.REACT_APP_API;
 
 function Post(props) {
@@ -65,7 +63,6 @@ const {setPost} = useState;
     </ol> 
 
      <AddComment post={post} addComment ={addComment}/> 
- {/* <AddAnswer question={question} />   */}
     <br/><br/><Link to ='/'> Back to Questions </Link> 
        </div>
       //  <AddVotes answers ={answer} question ={question} />: {answer.vote}

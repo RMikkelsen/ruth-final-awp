@@ -15,7 +15,7 @@ module.exports = (postDB) => {
 
   
 
-   router.post('/posts', async (req, res) => {
+   router.post('/', async (req, res) => {
   
     const post = await postDB.addPost(
 
@@ -24,7 +24,7 @@ module.exports = (postDB) => {
       req.body.author,
       req.body.date,
     ); 
-    console.log(addPost);
+    console.log(post);
     res.json(post);
  });
 
