@@ -22,7 +22,7 @@ function AddPost(props) {
   return (
     
     <>
-<div class = "addpost">
+<div className = "addpost">
       <h3>Create a New Post</h3>
 
       <input onChange={(event) => setTitle(event.target.value)} type="text" placeholder="Enter Title" />

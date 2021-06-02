@@ -28,12 +28,15 @@ module.exports = (postDB) => {
     res.json(post);
  });
 
- router.put('/comment', async (req, res) => {
-const post = await postDB.updatePost(
+ router.post('/addcomment', async (req, res) => {
+const post = await postDB.addComment(
+
   req.body.text,
   req.body.author,
+  req.body.id
   
 );
+console.log(post)
 res.json(post);
  })
 

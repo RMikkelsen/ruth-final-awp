@@ -5,7 +5,7 @@ import React from 'react';
 const API_URL = process.env.REACT_APP_API;
 
 function AddComment(props) {
-  const {addComment} = props;
+  const {addComment, post} = props;
  
 
   const [commentText, setText] = useState("");
@@ -29,7 +29,7 @@ function AddComment(props) {
      {/* <button type="button" onClick={addAnswer} >Add Answer</button>   */}
   <br/>
      <button type="button" onClick={(event) => {
-       addComment(commentText, commentAuth, commentDate);
+       addComment(commentText, commentAuth, post);
      
          // setText();
         //  setAuth();

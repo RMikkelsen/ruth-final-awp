@@ -48,8 +48,9 @@ module.exports = (mongoose) => {
     return post.save();
   }
 
-  async function updatePost(id, comments){
-    const post = await postModel.findByIdAndUpdate(id,{comments});
+  async function addComment(text, author, id){
+    const post = await postModel.findById(id);
+   post.comment.push({commentText: text, commentAuth: author})
     console.log(post);
     return post.save();
     
@@ -80,7 +81,7 @@ module.exports = (mongoose) => {
     getPosts,
     getPost,
     addPost,
-    updatePost,
+    addComment,
     bootstrap,
   }
 }

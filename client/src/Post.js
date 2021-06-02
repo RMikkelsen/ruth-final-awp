@@ -23,10 +23,7 @@ const {setPost} = useState;
    
    // Conditional rendering
   if (post === undefined) {
-   return <>  <p>You should see a question here</p>
-     <div>
-     <img src="/images/tech.jpg" alt="Technical Difficulties"/>
-     </div>
+   return <>  <p>You should probably see something else</p>
    
 
    <br/><Link to ='/'> Back to Posts </Link> </>;
@@ -36,15 +33,11 @@ const {setPost} = useState;
       
       <div className="question">
            
-           <>
+          
         
         <h3>Post: </h3> 
 
-
-<p>Title: {post.postTitle}</p> 
-
-
-       </>
+        <p>Title: {post.postTitle}</p> 
 
         <p>Topic: {post.postTopic}</p>
         <p>Author: {post.postAuth} </p> 
@@ -52,19 +45,22 @@ const {setPost} = useState;
          <p>Date Posted: {post.postDate} </p>
     
        
-    
+        
     <h4>Answered by the community:</h4>
     <ol>
     
       {post.comment.map((comment)=> (
-        <li key={post._id}> {comment.commentTopic} <br/> {comment.commentDate} <br/> {comment.commentAuth}<br/> </li>
+        <li key={post._id}> 
+       <p>Comment:  {comment.commentTopic}</p> <br/>
+       <p>Author: {comment.commentAuth}</p><br/>
+       <p>Date:  {comment.commentDate} </p><br/>  </li>
       ))}  
     </ol> 
-
-     <AddComment post={post} addComment ={addComment}/> 
-    <br/><br/><Link to ='/'> Back to Questions </Link> 
+ 
+     <AddComment updatePost={updatePost}  post ={post._id} addComment ={addComment}/> 
+    <br/><br/><Link to ='/'> Back to all Posts</Link> 
        </div>
-      //  <AddVotes answers ={answer} question ={question} />: {answer.vote}
+    
 
       
      );
