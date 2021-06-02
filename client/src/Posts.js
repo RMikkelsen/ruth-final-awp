@@ -23,17 +23,15 @@ console.log("data", data)
       {data.slice(0,15).map(post => 
     <div className="questionposts">
 
-<p key={post._id}>
-         <Link to={`/post/${post._id}`}> 
-        {post.postTitle}</Link>  
-       <br/><br/>
+<p key={post._id}> Title: <Link to={`/post/${post._id}`}> 
+        {post.postTitle}</Link>   <br/>
+     
 
-        {post.postTopic} 
-        <br/> 
-        {post.postAuth} <br/>
-       
-        <br/> 
-        {post.postDate}
+     <p>Topic:  {post.postTopic} </p>   <br/>
+     
+      <p>Author: {post.postAuth}</p>   <br/>
+   
+    <p> Date Posted:  {post.postDate}</p>  
 
         </p> 
 

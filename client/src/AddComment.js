@@ -18,17 +18,16 @@ function AddComment(props) {
     <br/>
       <h4>Add Your Comment</h4>
 
-      <p>Description</p>
-      <input onChange={(event) => setText(event.target.value)} type="text" />
-      <p>Submitted by</p>
-      <input onChange={(event) => setAuth(event.target.value)} type="text" />
-      <p>Date</p>
-      <input onChange={(event) => setDate(event.target.value)} type= "date" />
+     
+      <input onChange={(event) => setText(event.target.value)} type="text" placeholder="Enter Comment" />
+    <br/> <br/>
+      <input onChange={(event) => setAuth(event.target.value)} type="text" placeholder="Enter Comment Author"/>
+      
      
      
 <br></br>
      {/* <button type="button" onClick={addAnswer} >Add Answer</button>   */}
-  
+  <br/>
      <button type="button" onClick={(event) => {
        addComment(commentText, commentAuth, commentDate);
      

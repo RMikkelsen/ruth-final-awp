@@ -22,14 +22,14 @@ function AddPost(props) {
   return (
     
     <>
-
+<div class = "addpost">
       <h3>Create a New Post</h3>
-<p>Title</p>
-      <input onChange={(event) => setTitle(event.target.value)} type="text" />
-      <p>Topic</p>
-      <input onChange={(event) => setTop(event.target.value)} type="text" />
-      <p>Author</p>
-      <input onChange={(event) => setAuth(event.target.value)} type="text" /><br/>
+
+      <input onChange={(event) => setTitle(event.target.value)} type="text" placeholder="Enter Title" />
+     <br/> <br/>
+      <input onChange={(event) => setTop(event.target.value)} type="text" placeholder="Enter Topic" />
+      <br/> <br/>
+      <input onChange={(event) => setAuth(event.target.value)} type="text" placeholder="Enter Author of Post"/><br/>
      
 <br></br>
       <button type="button" onClick={(event) => { 
@@ -38,7 +38,7 @@ function AddPost(props) {
       navigate("/");}
          } > 
          Add Question </button>
-     
+         </div>
     </>
 
   );

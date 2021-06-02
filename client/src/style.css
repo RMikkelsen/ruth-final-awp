@@ -16,7 +16,36 @@ body{
 }
 .questionposts {
     border-style: solid;
+    border-color:rgb(228, 242, 250);
     border-radius: 30px;
     margin: 10px;
     padding: 20px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.501);
+}
+.question {
+    border-style: solid;
+    border-color:rgb(228, 242, 250);
+    border-radius: 30px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.501);
+}
+.addpost {
+    border-style: solid;
+    border-color:rgb(228, 242, 250);
+    border-radius: 30px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.501); 
+}
+input{
+    border-radius: 5px;
+    border-color:rgb(228, 242, 250);
+    height: 30px;
+    width: 300px;
+}
+button{
+    border-radius: 5px;
+    background-color: rgb(156, 223, 184);
+    height: 30px;
 }

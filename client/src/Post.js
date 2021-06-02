@@ -40,14 +40,13 @@ const {setPost} = useState;
         
         <h3>Post: </h3> 
 
-<ol>
-<p>
- {post.postTitle}</p> 
 
-</ol>
+<p>Title: {post.postTitle}</p> 
+
+
        </>
 
-        <p>{post.postTopic}</p>
+        <p>Topic: {post.postTopic}</p>
         <p>Author: {post.postAuth} </p> 
     
          <p>Date Posted: {post.postDate} </p>
