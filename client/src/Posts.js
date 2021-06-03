@@ -1,14 +1,10 @@
 import React from 'react';
-import AddPost from "./AddPost";
 import {Link} from "@reach/router";
-
-
-
 
 
 function Posts(props) {
 
- const {data, addPost} = props;
+ const {data} = props;
 
 console.log("data", data)
 
@@ -49,7 +45,6 @@ console.log("data", data)
     </>
   );
 }
-
 
 
 export default Posts;

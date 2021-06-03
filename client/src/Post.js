@@ -1,13 +1,11 @@
 import React from 'react';
-
 import {useState} from 'react';
 import AddVotes from './votes';
-import AddPost from './AddPost';
 import AddComment from './AddComment'
 import {Link} from "@reach/router";
 
 
-const API_URL = process.env.REACT_APP_API;
+
 
 function Post(props) {
  
@@ -20,8 +18,6 @@ const {setPost} = useState;
 
  const updatePost = () => {setPost(getPost(_id))}
 
-   
-   // Conditional rendering
   if (post === undefined) {
    return <>  <p>You should probably see something else</p>
    

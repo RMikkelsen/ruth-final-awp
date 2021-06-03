@@ -5,35 +5,74 @@ import Posts from './Posts';
 import AddPost from './AddPost';
 import './style.css';
 import AddComment from './AddComment';
-
+import AuthService from "./AuthService";
+import Login from "./Login";
 
 
 
 const API_URL = process.env.REACT_APP_API;
 
+const authService = new AuthService(`${API_URL}/users/authenticate`);
+
 function App() {
   const [data, setData] = useState([]);
- 
+  const [postCount, setPostCount] = useState(0);
  
   useEffect(() => {
      async function getData() {
      const url = `${API_URL}/posts`;
-    
-      const response = await fetch(url
-        );
+       // We now use `authService.fetch()` instead of `fetch()`
+      const response = await authService.fetch(url);
        
      const data = await response.json();
-     
+ 
       setData(data);
         
       };
      
     getData();
       
-  }, []); 
+  }, [postCount]); 
+
+ // Login using API
+ async function login(username, password) {
+  try {
+    const resp = await authService.login(username, password);
+    console.log("Authentication:", resp.msg);
+    setPostCount(p => p + 1);
+  } catch (e) {
+    console.log("Login", e);
+  }
+}
+
+/*
+useEffect(() => {
+  if (!authService.loggedIn()) {
+    login("krdo", "123").then(() => {
+      setPostCount(p => p + 1); // Refresh data after login
+    })
+  }
+}, []); // Only try login at first page render
+*/
+
+let contents = <p>No Posts</p>;
+if (data.length > 0) {
+  contents =< ol>{data.map(post => <li key={post._id}>{post.name}</li>)}</ol>;
+}
+
+let loginPart = <Login login={login}></Login>;
+if (authService.loggedIn()) {
+  loginPart = "Logged in!";
+
+}
+
+
+
+
 
   function getPost(_id){
     return data.find(post => post._id === _id);
+  
   }
   
   function addPost(postTitle, postTopic, postAuth) {
@@ -61,7 +100,9 @@ function App() {
          console.log(reply);
         
     };
- 
+
+     
+    setPostCount(postCount + 1);
 postData();
       
 }
@@ -90,9 +131,11 @@ function addComment(commentText, commentAuth, _id) {
        
        
        const reply = await response.json();
-       //setCounter(counter + 1);
-      console.log(reply);
        
+      console.log(reply);
+     
+     
+      setPostCount(postCount + 1);
   };
 
 postData();
@@ -119,6 +162,8 @@ return (
 <AddComment path="/post/:_id" getPost={getPost} addComment={addComment}/>
 
 </Router>
+{/*{contents} */}
+{loginPart}
 </>
   
 );

@@ -43,10 +43,10 @@ const openPaths = [
 ];
 
 // The secret value. Defaults to "the cake is a lie".
-//const secret = process.env.SECRET || "the cake is a lie";
+const secret = process.env.SECRET || "the cake is a lie";
 
 // Validate the user token using checkJwt middleware.
-//app.use(checkJwt({ secret, algorithms: ["HS512"] }).unless({ path: openPaths }));
+app.use(checkJwt({ secret, algorithms: ["HS512"] }).unless({ path: openPaths }));
 
 // This middleware checks the result of checkJwt above
 app.use((err, req, res, next) => {
@@ -65,9 +65,9 @@ app.use((err, req, res, next) => {
 //];
 
 // The routes
-//const userRoutes = require("./userRoutes")(secret);
+const userRoutes = require("./userRoutes")(secret);
 //const routes = require("./routes")(data);
-//app.use("/api/users", userRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/posts", routes);
 
 // Start

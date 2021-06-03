@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import './style.css';
-import {Link} from "@reach/router";
-import Posts from './Posts';
-import Post from './Post';
 import {useNavigate} from "@reach/router";
-const API_URL = process.env.REACT_APP_API;
 
 function AddPost(props) {
   const { addPost } = props;
@@ -15,9 +11,6 @@ function AddPost(props) {
   const [postTitle, setTitle] = useState("");
   const [postTopic, setTop] = useState("");
   const [postAuth, setAuth] = useState("");
- 
- 
-
 
   return (
     

@@ -8,7 +8,7 @@ const users = [
   // These are just some test users with passwords.
   // The passwords are in clear text for testing purposes (don't do this in production).
   { id: 0, username: "krdo", password: '123' },
-  { id: 1, username: "rmm", password: 'password' },
+  { id: 1, username: "rmm", password: 'rmm' },
   { id: 2, username: "bob", password: 'bob' },
 ];
 
@@ -41,7 +41,7 @@ module.exports = secret => {
   });
 
   // This route takes a username and a password and creates an auth token
-  // POST /api/users/authenticate
+  //POST /api/users/authenticate
   router.post('/authenticate', (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
