@@ -1,12 +1,17 @@
-import React from 'react';
+import {React, useState} from 'react';
 import {Link} from "@reach/router";
+
+
 
 
 function Posts(props) {
 
  const {data} = props;
+const [topic, setTopic] = useState("")
+
 
 console.log("data", data)
+
 
 
   return ( 
@@ -16,7 +21,18 @@ console.log("data", data)
     
     <ol className='list'> 
   <h3> Posted Questions </h3> 
-      {data.slice(0,15).map(post => 
+  <h4> Filter By:</h4>
+  <button onClick={() => {setTopic("Scuba")}} >Scuba</button>&emsp;
+  <button onClick={() => {setTopic("Skate")}} > Skate</button>&emsp;
+  <button onClick={() => {setTopic("Surf")}}>Surf</button>&emsp;
+  <button onClick={() => {setTopic("Dance")}}>Dance</button>
+ {/*<button onClick={() =>  {Posts(data)}}>All</button> 
+ 
+
+  // {data.slice(0,15) */}
+{data.filter(data => data.postTopic === topic) 
+
+    .map(post => 
     <div className="questionposts">
 
 <p key={post._id}> Title: <Link to={`/post/${post._id}`}> 
@@ -35,10 +51,12 @@ console.log("data", data)
 
       )
       
+      
     } 
+  
     </ol>
     <div>
-    <Link to ='/addpost'> Create a Post </Link> 
+  {/*} <Link to ='/addpost'> Create a Post </Link> */}
     </div>
    
     </div>

@@ -18,6 +18,7 @@ function App() {
   const [data, setData] = useState([]);
   const [postCount, setPostCount] = useState(0);
  
+  
   useEffect(() => {
      async function getData() {
      const url = `${API_URL}/posts`;
@@ -62,7 +63,7 @@ if (data.length > 0) {
 
 let loginPart = <Login login={login}></Login>;
 if (authService.loggedIn()) {
-  loginPart = "Logged in!";
+  loginPart = "You are Currently Logged In";
 
 }
 
@@ -147,12 +148,14 @@ postData();
 return (
 <>
 <div className="header">
-<h1> Sports Activities </h1>
+<h1> Cool Sports </h1>
 <h3>Scuba Diving, Skateboarding, and more!</h3>
-<div>
+<div className ="navigation">
     <Link to ='/addpost'> Create a Post </Link> <br/>
     <Link to ='/login'>   Login </Link> <br/>
     <Link to ='/'>   All Posts </Link> 
+
+  
     </div>
 </div>
 <Router>
