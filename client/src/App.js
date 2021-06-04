@@ -17,8 +17,7 @@ const authService = new AuthService(`${API_URL}/users/authenticate`);
 function App() {
   const [data, setData] = useState([]);
   const [postCount, setPostCount] = useState(0);
- 
-  
+ const [filterTopic, setTopic] = useState("");
   useEffect(() => {
      async function getData() {
      const url = `${API_URL}/posts`;
@@ -151,9 +150,13 @@ return (
 <h1> Cool Sports </h1>
 <h3>Scuba Diving, Skateboarding, and more!</h3>
 <div className ="navigation">
-    <Link to ='/addpost'> Create a Post </Link> <br/>
-    <Link to ='/login'>   Login </Link> <br/>
-    <Link to ='/'>   All Posts </Link> 
+    <Link to ='/addpost'> Create a Post </Link> &emsp;
+    <Link to ='/login'>   Login </Link> &emsp;
+    <Link to ='/'>   All Posts </Link> &emsp;
+    <Link to ='/Scuba'  onClick={() => {setTopic("Scuba")}}>   Scuba </Link> &emsp;
+    <Link to ='/Skate' onClick={() => {setTopic("Skate")}}>   Skate </Link> &emsp;
+    <Link to ='/Surf' onClick={() => {setTopic("Surf")}}>   Surf </Link> &emsp;
+    <Link to ='/Dance' onClick={() => {setTopic("Dance")}}>   Dance </Link> &emsp;
 
   
     </div>
@@ -163,6 +166,8 @@ return (
 <Post path="/post/:_id" getPost={getPost} addComment={addComment}/>
 <AddPost path="/addpost"  addPost={addPost}/>
 <AddComment path="/post/:_id" getPost={getPost} addComment={addComment}/>
+<Posts path = {`/${filterTopic}`} data = {data} filter={filterTopic}></Posts>
+
 
 </Router>
 {/*{contents} */}
