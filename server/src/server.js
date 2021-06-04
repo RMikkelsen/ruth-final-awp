@@ -27,8 +27,6 @@ async function createServer() {
   // Require routes
   const routes = require("./routes")(postDB); // Inject mongoose into routes module
 
-// Open paths that do not need login.
-// You can use various formats to define the open paths.
 const openPaths = [
   // Open "/api/users/authenticate" for POST requests
   { url: "/api/users/authenticate", methods: ["POST"] },
@@ -59,9 +57,9 @@ app.use((err, req, res, next) => {
 
 // Some test data
 //const data = [
- // { id: 1, name: "Garfield", hobbies: ["Purring", "Sleeping", "Eating"] },
-  //{ id: 2, name: "Tom", hobbies: ["Purring", "Eating"] },
-  //{ id: 3, name: "Felix", hobbies: ["Sleeping", "Eating"] },
+// { id: 1, name: "Garfield", hobbies: ["Purring", "Sleeping", "Eating"] },
+//{ id: 2, name: "Tom", hobbies: ["Purring", "Eating"] },
+// { id: 3, name: "Felix", hobbies: ["Sleeping", "Eating"] },
 //];
 
 // The routes
@@ -69,9 +67,6 @@ const userRoutes = require("./userRoutes")(secret);
 //const routes = require("./routes")(data);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", routes);
-
-// Start
-//app.listen(port, () => console.log(`Auth Kittens API running on port ${port}!`));
 
   // Add middleware
   app.use(bodyParser.json()); 

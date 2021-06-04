@@ -1,0 +1,10 @@
+Final Exam Project
+o Ruth Moritz Mikkelsen, AWP Spring 2021
+o Heroku: https://ruth-final-awp.herokuapp.com/
+o https://github.com/RMikkelsen/ruth-final-awp
+o Hi Kristian, I've added you onto my github as a collaborator :) 
+Here's the logins for the site:
+
+  User1)  username: "krdo", password: '123' 
+  User2) username: "rmm", password: 'rmm' 
+  User3) username: "bob", password: 'bob' 

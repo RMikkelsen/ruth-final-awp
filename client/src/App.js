@@ -67,9 +67,6 @@ if (authService.loggedIn()) {
 }
 
 
-
-
-
   function getPost(_id){
     return data.find(post => post._id === _id);
   
@@ -101,13 +98,11 @@ if (authService.loggedIn()) {
         
     };
 
-     
+
     setPostCount(postCount + 1);
 postData();
       
 }
-
-
 function addComment(commentText, commentAuth, _id) {
   
   const data = { 
@@ -129,12 +124,11 @@ function addComment(commentText, commentAuth, _id) {
           body: JSON.stringify(data),
         });
        
-       
        const reply = await response.json();
        
       console.log(reply);
      
-     
+
       setPostCount(postCount + 1);
   };
 
@@ -142,21 +136,20 @@ postData();
 
 }
 
-
-
 return (
 <>
 <div className="header">
 <h1> Cool Sports </h1>
 <h3>Scuba Diving, Skateboarding, and more!</h3>
 <div className ="navigation">
-    <Link to ='/addpost'> Create a Post </Link> &emsp;
-    <Link to ='/login'>   Login </Link> &emsp;
+   
     <Link to ='/'>   All Posts </Link> &emsp;
     <Link to ='/Scuba'  onClick={() => {setTopic("Scuba")}}>   Scuba </Link> &emsp;
     <Link to ='/Skate' onClick={() => {setTopic("Skate")}}>   Skate </Link> &emsp;
     <Link to ='/Surf' onClick={() => {setTopic("Surf")}}>   Surf </Link> &emsp;
     <Link to ='/Dance' onClick={() => {setTopic("Dance")}}>   Dance </Link> &emsp;
+    <Link to ='/addpost'> Create a Post </Link> &emsp;
+    <Link to ='/login'>   Login </Link> &emsp;
 
   
     </div>

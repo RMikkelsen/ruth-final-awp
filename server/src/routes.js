@@ -13,8 +13,6 @@ module.exports = (postDB) => {
     res.json(post);
   });
 
-  
-
    router.post('/', async (req, res) => {
   
     const post = await postDB.addPost(
