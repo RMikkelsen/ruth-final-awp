@@ -20,7 +20,7 @@ function AddPost(props) {
 
       <input onChange={(event) => setTitle(event.target.value)} type="text" placeholder="Enter Title" />
      <br/> <br/>
-      <input onChange={(event) => setTop(event.target.value)} type="text" placeholder="Enter Topic" />
+      <input onChange={(event) => setTop(event.target.value)} type="text" placeholder="Enter Scuba, Surf, Skate, or Dance" />
       <br/> <br/>
       <input onChange={(event) => setAuth(event.target.value)} type="text" placeholder="Enter Author of Post"/><br/>
      
